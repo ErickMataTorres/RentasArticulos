@@ -24,6 +24,13 @@ namespace RentasArticulos.Controllers
             var r = c.EjecutarAccionRol();
             return Json(r);
         }
+        [HttpDelete]
+        [Route("BorrarRol/{id}")]
+        public IActionResult BorrarRol(int id)
+        {
+            var r = Models.Rol.BorrarRol(id);
+            return Json(r);
+        }
 
     }
 }

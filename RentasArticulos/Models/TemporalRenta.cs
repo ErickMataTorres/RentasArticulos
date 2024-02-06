@@ -2,11 +2,11 @@
 {
     public class TemporalRenta
     {
-        public int Renglon { get; set; }
-        public int IdArticulo { get; set; }
-        public string? NombreArticulo { get; set; }
-        public decimal PrecioPorHora { get; set; }
-        public decimal TiempoRentaMinutos { get; set; }
-        public decimal SubTotal { get; set; }
+        public int renglon { get; set; }
+        public int idArticulo { get; set; }
+        public string? nombreArticulo { get; set; }
+        public decimal precioPorHora { get; set; }
+        public decimal tiempoRentaMinutos { get; set; }
+        public decimal subTotal { get; set; }
     }
 }

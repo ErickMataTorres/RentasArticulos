@@ -2,14 +2,14 @@
 {
     public class Usuario
     {
-        public int Id { get; set; }
-        public string? Nombre { get; set; }
-        public string? Sexo { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public DateTime FechaRegistro { get; set; }
-        public int IdRol { get; set; }
-        public string? NombreRol { get; set; }
-        public string? Correo { get; set; }
-        public string? Contrasena { get; set; }
+        public int id { get; set; }
+        public string? nombre { get; set; }
+        public string? sexo { get; set; }
+        public DateTime fechaNacimiento { get; set; }
+        public DateTime fechaRegistro { get; set; }
+        public int idRol { get; set; }
+        public string? nombreRol { get; set; }
+        public string? correo { get; set; }
+        public string? contrasena { get; set; }
     }
 }

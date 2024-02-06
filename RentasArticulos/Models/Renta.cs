@@ -2,15 +2,15 @@
 {
     public class Renta
     {
-        public int Id { get; set; }
-        public int IdPago { get; set; }
-        public string? NombrePago { get; set; }
-        public DateTime Fecha { get; set; }
-        public decimal ComisionPorcentaje{ get; set; }
-        public decimal Comision { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Total { get; set; }
-        public decimal DineroPago { get; set; }
-        public decimal Cambio { get; set; }
+        public int id { get; set; }
+        public int idPago { get; set; }
+        public string? nombrePago { get; set; }
+        public DateTime fecha { get; set; }
+        public decimal comisionPorcentaje{ get; set; }
+        public decimal comision { get; set; }
+        public decimal subTotal { get; set; }
+        public decimal total { get; set; }
+        public decimal dineroPago { get; set; }
+        public decimal cambio { get; set; }
     }
 }

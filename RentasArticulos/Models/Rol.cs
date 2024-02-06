@@ -5,25 +5,25 @@ namespace RentasArticulos.Models
 {
     public class Rol
     {
-        public int Id { get; set; }
-        public string? Nombre { get; set; }
-        public char Administrador { get; set; }
+        public int id { get; set; }
+        public string? nombre { get; set; }
+        public char administrador { get; set; }
         public static List<Rol> ConsultarRoles()
         {
             SqlConnection conx = Models.Conexion.Conectar();
             SqlCommand command = new SqlCommand("spConsultarRoles", conx);
             command.CommandType = CommandType.StoredProcedure;
-            Rol r = new Rol();
+            Rol c = new Rol();
             List<Rol> lista = new List<Rol>();
             conx.Open();
             SqlDataReader dr = command.ExecuteReader();
             while (dr.Read())
             {
-                r = new Rol();
-                r.Id = int.Parse(dr["Id"].ToString()!);
-                r.Nombre = dr["Nombre"].ToString();
-                r.Administrador = char.Parse(dr["Administrador"].ToString()!);
-                lista.Add(r);
+                c = new Rol();
+                c.id = int.Parse(dr["Id"].ToString()!);
+                c.nombre = dr["Nombre"].ToString();
+                c.administrador = char.Parse(dr["Administrador"].ToString()!);
+                lista.Add(c);
             }
             dr.Close();
             conx.Close();
@@ -35,22 +35,52 @@ namespace RentasArticulos.Models
             SqlConnection conx = Models.Conexion.Conectar();
             SqlCommand command = new SqlCommand("spEjecutarAccionRol", conx);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@Id", Id);
-            command.Parameters.AddWithValue("@Nombre", Nombre?.ToUpper().Trim());
-            command.Parameters.AddWithValue("@Administrador", Administrador);
+            command.Parameters.AddWithValue("@Id", id);
+            command.Parameters.AddWithValue("@Nombre", nombre?.ToUpper().Trim());
+            command.Parameters.AddWithValue("@Administrador", administrador);
             conx.Open();
             SqlDataReader dr = command.ExecuteReader();
             try
             {
                 if(dr.Read())
                 {
-                    mensajeRespuesta.Id = int.Parse(dr["Id"].ToString()!);
-                    mensajeRespuesta.Nombre = dr["Nombre"].ToString();
+                    mensajeRespuesta.id = int.Parse(dr["Id"].ToString()!);
+                    mensajeRespuesta.nombre = dr["Nombre"].ToString();
                 }
             }
             catch(Exception error)
             {
-                mensajeRespuesta.Nombre = error.Message;
+                mensajeRespuesta.nombre = error.Message;
+                if (conx.State == ConnectionState.Open)
+                {
+                    dr.Close();
+                    conx.Close();
+                }
+            }
+            dr.Close();
+            conx.Close();
+            return mensajeRespuesta;
+        }
+        public static MensajeRespuesta BorrarRol(int id)
+        {
+            Models.MensajeRespuesta mensajeRespuesta = new Models.MensajeRespuesta();
+            SqlConnection conx = Models.Conexion.Conectar();
+            SqlCommand command = new SqlCommand("spBorrarRol", conx);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Id", id);
+            conx.Open();
+            SqlDataReader dr = command.ExecuteReader();
+            try
+            {
+                if (dr.Read())
+                {
+                    mensajeRespuesta.id = int.Parse(dr["Id"].ToString()!);
+                    mensajeRespuesta.nombre = dr["Nombre"].ToString();
+                }
+            }
+            catch (Exception error)
+            {
+                mensajeRespuesta.nombre = error.Message;
                 if (conx.State == ConnectionState.Open)
                 {
                     dr.Close();

@@ -2,18 +2,18 @@
 {
     public class DetalleRenta
     {
-        public int IdRenta { get; set; }
-        public int Renglon { get; set; }
-        public int IdArticulo { get; set; }
-        public decimal PrecioPorHora { get; set; }
-        public decimal PrecioPorHoraExtra { get; set; }
-        public decimal TiempoExtra { get; set; }
-        public decimal CargosPorExtra { get; set; }
-        public DateTime FechaRentaComenzada { get; set; }
-        public DateTime FechaRentaTerminada { get; set; }
-        public DateTime FechaRentaTerminadaExtra { get; set; }
-        public decimal TiempoRentaMinutos { get; set; }
-        public decimal SubTotal { get; set; }
+        public int idRenta { get; set; }
+        public int renglon { get; set; }
+        public int idArticulo { get; set; }
+        public decimal precioPorHora { get; set; }
+        public decimal precioPorHoraExtra { get; set; }
+        public decimal tiempoExtra { get; set; }
+        public decimal cargosPorExtra { get; set; }
+        public DateTime fechaRentaComenzada { get; set; }
+        public DateTime fechaRentaTerminada { get; set; }
+        public DateTime fechaRentaTerminadaExtra { get; set; }
+        public decimal tiempoRentaMinutos { get; set; }
+        public decimal subTotal { get; set; }
 
     }
 }

@@ -2,16 +2,16 @@
 {
     public class Articulo
     {
-        public int Id { get; set; }
-        public string? Nombre { get; set; }
-        public int IdCategoria { get; set; }
-        public string? NombreCategoria { get; set; }
-        public decimal CostoArticulo { get; set; }
-        public DateTime FechaComprado { get; set; }
-        public decimal PrecioPorHora { get; set; }
-        public decimal PrecioPorHoraExtra { get; set; }
-        public DateTime FechaUltimaRentada { get; set; }
-        public int IdEstado { get; set; }
-        public string? NombreEstado { get; set; }
+        public int id { get; set; }
+        public string? nombre { get; set; }
+        public int idCategoria { get; set; }
+        public string? nombreCategoria { get; set; }
+        public decimal costoArticulo { get; set; }
+        public DateTime fechaComprado { get; set; }
+        public decimal precioPorHora { get; set; }
+        public decimal precioPorHoraExtra { get; set; }
+        public DateTime fechaUltimaRentada { get; set; }
+        public int idEstado { get; set; }
+        public string? nombreEstado { get; set; }
     }
 }
