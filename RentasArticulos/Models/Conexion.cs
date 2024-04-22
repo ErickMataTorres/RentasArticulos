@@ -6,7 +6,7 @@ namespace RentasArticulos.Models
     {
         public static SqlConnection Conectar()
         {
-            string conx = "DATA SOURCE = A; INITIAL CATALOG = RentasArticulosBD; INTEGRATED SECURITY = YES;";
+            string conx = @"DATA SOURCE = A\A; INITIAL CATALOG = RentasArticulosBD; INTEGRATED SECURITY = YES;";
             SqlConnection s = new SqlConnection(conx);
             return s;
         }

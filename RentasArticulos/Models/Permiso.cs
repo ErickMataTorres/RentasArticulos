@@ -7,7 +7,7 @@ namespace RentasArticulos.Models
     {
         public int idRol { get; set; }
         public string? nombreRol { get; set; }
-        public string? opcion { get; set; }
+        public string? opciones { get; set; }
 
         public static List<Permiso> ConsultarPermisos()
         {
@@ -23,7 +23,7 @@ namespace RentasArticulos.Models
                 c = new Permiso();
                 c.idRol = int.Parse(dr["IdRol"].ToString()!);
                 c.nombreRol = dr["NombreRol"].ToString();
-                c.opcion = dr["Opcion"].ToString();
+                c.opciones = dr["Opcion"].ToString();
                 lista.Add(c);
             }
             dr.Close();
